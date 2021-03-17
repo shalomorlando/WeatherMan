@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,13 +8,45 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World! Testing git Branching"
+        android:text="@string/enter_your_zipcode"
         android:textSize="@dimen/title_text_height"
+        app:layout_constraintBottom_toTopOf="@+id/zipCodeEditText"
+        app:layout_constraintEnd_toEndOf="@+id/zipCodeEditText"
+        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintStart_toStartOf="@+id/zipCodeEditText" />
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="@dimen/zip_code_entry_size"
+        android:layout_height="@dimen/zip_code_entry_size"
+        android:src="@drawable/ic_baseline_location_on_24"
+        tools:ignore="ContentDescription"
+        app:layout_constraintBottom_toTopOf="@+id/title"
+        app:layout_constraintEnd_toEndOf="@+id/zipCodeEditText"
+        app:layout_constraintStart_toStartOf="@+id/zipCodeEditText" />
+
+    <EditText
+        android:id="@+id/zipCodeEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_zip_code"
+        android:inputType="number"
+        android:importantForAutofill="no"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/enterButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/submit_zipcode"
+        app:layout_constraintEnd_toEndOf="@+id/zipCodeEditText"
+        app:layout_constraintStart_toStartOf="@+id/zipCodeEditText"
+        app:layout_constraintTop_toBottomOf="@+id/zipCodeEditText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
