@@ -4,4 +4,6 @@
     <string name="enter_zip_code">Enter Zip Code</string>
     <string name="enter_your_zipcode">Enter your zipcode</string>
     <string name="zipcode_entry_error">Please enter a valid zipcode</string>
+
+    <string name="forecast_clicked_format">Forecast: %1$.2f %2$s</string>
 </resources>
