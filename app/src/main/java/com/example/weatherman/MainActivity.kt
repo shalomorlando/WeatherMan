@@ -1,5 +1,6 @@
 package com.example.weatherman
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -8,6 +9,7 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.weatherman.details.ForecastDetailsActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,10 +35,8 @@ class MainActivity : AppCompatActivity() {
         val forecastList: RecyclerView = findViewById(R.id.forecastList)
         forecastList.layoutManager = LinearLayoutManager(this)
         val dailyForecastAdapter = DailyForecastAdapter { forecastItem->
-
-            val msg = getString(R.string.forecast_clicked_format, forecastItem.temp, forecastItem
-            .description)
-            Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+            val forecastDetailsIntent = Intent(this, ForecastDetailsActivity::class.java)
+            startActivity(forecastDetailsIntent)
         }
         forecastList.adapter = dailyForecastAdapter
 
